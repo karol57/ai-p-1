@@ -24,10 +24,10 @@ public:
     friend std::ostream& operator<<(std::ostream& s, const Map& m);
 private:
 
-    const vec2d m_cities[7u];
-    const TriMatrix<double, 7u> m_distances;
-    TriMatrix<double, 7u> m_pheromone;
-    TriMatrix<double, 7u> m_preparedPheromone;
+    const vec2d m_cities[6u];
+    const TriMatrix<double, 6u> m_distances;
+    TriMatrix<double, 6u> m_pheromone;
+    TriMatrix<double, 6u> m_preparedPheromone;
 
     double m_pheromoneCoef = 1;
     double m_visibilityCoef = 5;

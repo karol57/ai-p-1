@@ -16,12 +16,12 @@ constexpr TriMatrix<double, N> genEuclideanDistWeights(const vec2d (&verices)[N]
 Map::Map()
     : m_cities {
           { 1,  1 }, // A
-          { 5,  8 }, // B
-          { 7, 12 }, // C
-          { 2,  9 }, // D
-          { 7,  2 }, // E
-          { 1, 12 }, // F
-          { 4,  2 }  // G
+          { 2,  2 }, // B
+          { 0, 0 }, // C
+          { 5,  3 }, // D
+          { 8, 1  }, // E
+          { 7, 4 }//, // F
+          //{ 4,  2 }  // G
       }
     , m_distances{ genEuclideanDistWeights(m_cities) }
     , m_pheromone{ 1.0 }
