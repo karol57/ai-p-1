@@ -231,7 +231,7 @@ int main()
         map.updatePheromone();
     }
 
-    std::cout << "Best path " << bestPath << " distance: " << bestDistance;
+    std::cout << "Best path " << bestPath << " distance: " << bestDistance << std::endl;
 
     return 0;
 }
