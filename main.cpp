@@ -25,6 +25,14 @@ using namespace std::placeholders;
 class Path : public std::vector<std::size_t>
 {
 public:
+    void setStartingPoint(std::size_t cityIdx)
+    {
+        const auto it = std::find(begin(), end(), cityIdx);
+        if (it == end())
+            throw std::runtime_error("Path::setStartingPoint: invalid city index.");
+        std::rotate(begin(), it, end());
+    }
+
     friend std::ostream& operator<<(std::ostream& s, const Path& p)
     {
         static const auto transformation = [](std::size_t cityIdx) -> char { return 'A' + cityIdx; };
@@ -143,6 +151,7 @@ int main()
     Map map;
     std::cout << map << std::endl;
 
+    const std::size_t startingPoint = 'C' - 'A';
     const std::size_t iterations = 100u;
     const std::size_t ants = map.size();
 
@@ -231,6 +240,7 @@ int main()
         map.updatePheromone();
     }
 
+    bestPath.setStartingPoint(startingPoint);
     std::cout << "Best path " << bestPath << " distance: " << bestDistance << std::endl;
 
     return 0;
