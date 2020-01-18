@@ -143,7 +143,7 @@ int main()
     Map map;
     std::cout << map << std::endl;
 
-    const std::size_t iterations = 50u;
+    const std::size_t iterations = 100u;
     const std::size_t ants = map.size();
 
     std::mt19937_64 rng{ std::random_device{}() };
